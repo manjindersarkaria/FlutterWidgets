@@ -66,9 +66,13 @@ class _MyImagePickerState extends State<MyImagePicker> {
           SizedBox(
             height: 300,
             width: 300,
-            child: _selectedImage != null
-                ? Image.file(_selectedImage!)
-                : Text('Please select an image'),
+            child: Column(
+              children: [
+                _selectedImage != null
+                    ? Image.file(_selectedImage!)
+                    : Center(child: Text('Please select an image')),
+              ],
+            ),
           )
         ],
       ),
