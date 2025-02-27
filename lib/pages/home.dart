@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:instagram_widgets/pages/stepWidget.dart';
-import 'package:instagram_widgets/pages/datepicker.dart';
 import 'package:instagram_widgets/pages/myBottomSheet.dart';
 import 'dismissibleList.dart';
+import 'formWidgets.dart';
 import 'myDrawer.dart';
 import 'myImagePicker.dart';
 
@@ -19,7 +19,7 @@ class _HomeState extends State<Home> {
   final List<Widget> _pages = [
     MyImagePicker(),
     StepWidget(),
-    DatePicker(),
+    FormWidgets(),
     MyBottomSheet(),
     DismissibleList(),
   ];
@@ -52,15 +52,9 @@ class _HomeState extends State<Home> {
                 label: '',
               ),
               BottomNavigationBarItem(
-                  icon: SvgPicture.asset(_selectedIndex == 1
-                      ? 'assets/images/icons8-widget.svg'
-                      : 'assets/images/search-outline.svg'),
+                  icon: SvgPicture.asset('assets/images/icons8-widget.svg'),
                   label: ''),
-              BottomNavigationBarItem(
-                  icon: SvgPicture.asset(_selectedIndex == 2
-                      ? 'assets/images/add-square-bold.svg'
-                      : 'assets/images/add-square-outline.svg'),
-                  label: ''),
+              BottomNavigationBarItem(icon: Icon(Icons.widgets), label: ''),
               BottomNavigationBarItem(
                   icon: SvgPicture.asset(_selectedIndex == 3
                       ? 'assets/images/video-play-bold.svg'
