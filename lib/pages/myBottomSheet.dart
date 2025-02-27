@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'animatedDialog.dart';
+
 class MyBottomSheet extends StatefulWidget {
   const MyBottomSheet({super.key});
 
@@ -31,15 +33,20 @@ class _MyBottomSheetState extends State<MyBottomSheet> {
     return Padding(
         padding: const EdgeInsets.all(8.0),
         child: Center(
-          child: MaterialButton(
-              height: 50,
-              minWidth: 200,
-              color: Colors.teal,
-              child: const Text(
-                'Open',
-                style: TextStyle(color: Colors.white),
-              ),
-              onPressed: () => {_displayBottomSheet(context)}),
+          child: Column(
+            children: [
+              AnimatedDialog(),
+              MaterialButton(
+                  height: 50,
+                  minWidth: 200,
+                  color: Colors.teal,
+                  child: const Text(
+                    'Open Bottom Sheet',
+                    style: TextStyle(color: Colors.white, fontSize: 16),
+                  ),
+                  onPressed: () => {_displayBottomSheet(context)}),
+            ],
+          ),
         ));
   }
 }
